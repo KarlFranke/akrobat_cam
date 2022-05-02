@@ -25,8 +25,9 @@
     <param name="height" value="480"/>
     <param name="framerate" value="8"/>
   </node>
-
-  <include file="$(find akrobat_cam)/launch/Map.launch" />
+  
+<include file="$(find pico_flexx_driver)/launch/pico_flexx_driver.launch" />
+<include file="$(find akrobat_cam)/launch/Map.launch" />
 <include file="$(find akrobat_imu)/launch/bricks_v2.launch" />
 
 </launch>
