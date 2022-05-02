@@ -8,6 +8,10 @@
      args="$(arg optical_rotate) base_link left 100" />  
 
 
+
+<node pkg="tf" type="static_transform_publisher" name="pico_base_link"
+     args="$(arg optical_rotate) base_link pico_flexx_optical_frame 100" />  
+
 <!-- Run the ROS package stereo_image_proc -->
 <group ns="/akrobat_stereo" >
     <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
