@@ -30,8 +30,7 @@
         <param name="approx_sync"   type="bool" value="true"/>
         <param name="queue_size"    type="int" value="5"/>
 
-        <param name="Odom/MinInliers" type="string" value="12"/>
-        <param name="Odom/RoiRatios"  type="string" value="0.03 0.03 0.04 0.04"/>
+        
     </node>     
 </group>
 
@@ -55,8 +54,7 @@
 
      <param name="queue_size" type="int" value="30"/>
 
-     <!-- RTAB-Map's parameters -->
-     <param name="Vis/MinInliers" type="string" value="12"/>
+     
   </node>
  </group>
 </launch>
