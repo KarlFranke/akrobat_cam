@@ -5,12 +5,10 @@
 <arg name="pi/2" value="1.5707963267948966" />
 <arg name="optical_rotate" value="0 0 0 -$(arg pi/2) 0 -$(arg pi/2)" />
 <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
-     args="$(arg optical_rotate) base_link left 100" />  
-
-
+     args="$(arg optical_rotate) base_link left 100" /> 
 
 <node pkg="tf" type="static_transform_publisher" name="pico_base_link"
-     args="$(arg optical_rotate) base_link pico_flexx_optical_frame 100" />  
+     args="$(arg optical_rotate) base_link pico_flexx_optical_frame 100" /> 
 
 <!-- Run the ROS package stereo_image_proc -->
 <group ns="/akrobat_stereo" >
@@ -48,7 +46,7 @@
      <remap from="left/image_rect"   to="/akrobat_stereo/left/image_rect"/>
      <remap from="right/image_rect"  to="/akrobat_stereo/right/image_rect"/>
      <remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
-     <remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/>
+     <remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/> 
 
      <remap from="depth/image"     to="/pico_flexx/image_depth"/>
      <remap from="rgb/image"	to="/pico_flexx/image_mono8"/>
@@ -58,6 +56,7 @@
 
      <param name="queue_size" type="int" value="30"/>
 
+     <!-- RTAB-Map's parameters -->
      
   </node>
  </group>
