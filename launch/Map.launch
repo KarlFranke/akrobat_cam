@@ -25,7 +25,7 @@
       	<remap from="right/image_rect"      to="right/image_rect"/>
       	<remap from="left/camera_info"      to="/akrobat_stereopi/left/camera_info"/>
       	<remap from="right/camera_info"     to="/akrobat_stereopi/right/camera_info"/>
-      	<remap from="odom"                  to="/stereo_odometry"/>
+      	<remap from="odom"                  to="/odom"/>
 
         <param name="frame_id" type="string" value="base_link"/>
         <param name="odom_frame_id" type="string" value="odom"/>
@@ -49,7 +49,7 @@
      
     <!-- inputs -->
       
-      <remap from="odom"            to="/stereo_odometry"/>
+      <remap from="odom"            to="/odom"/>
       <remap from="left/image_rect"   to="/akrobat_stereo/left/image_rect"/>
       <remap from="right/image_rect"  to="/akrobat_stereo/right/image_rect"/>
       <remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
