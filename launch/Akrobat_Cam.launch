@@ -21,8 +21,8 @@
     <param name="right_camera_name" value="$(arg right_camera_name)"/>
     <!-- <param name="width" value="1280"/>
     <param name="height" value="720"/> -->
-    <param name="width" value="224"/>
-    <param name="height" value="271"/>
+    <param name="width" value="640"/>
+    <param name="height" value="480"/>
     <param name="framerate" value="8"/>
   </node>
 
