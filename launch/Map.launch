@@ -45,7 +45,8 @@
     <param name="queue_size" type="int" value="30"/>
 
     <!-- RTAB-Map's parameters -->
-    
+    <arg name="rgbd_odometry"     default="false"/>
+
     <!-- When sending goals on /rtabmap/goal topic, use actionlib to communicate with move_base --> 
 	  <param name="use_action_for_goal" type="bool" value="true"/>
           <remap from="move_base"            to="/move_base"/>
