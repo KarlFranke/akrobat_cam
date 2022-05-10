@@ -38,28 +38,49 @@
 
 <group ns="rtabmap">   
   <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="--delete_db_on_start">
-     <param name="frame_id" type="string" value="base_link"/>
-     <param name="subscribe_stereo" type="bool" value="true"/>
-      <param name="subscribe_depth"  type="bool" value="true"/>
-     <param name="approx_sync"      type="bool" value="true"/>
-     <param name="queue_size" type="int" value="30"/>
+    <param name="frame_id" type="string" value="base_link"/>
+    <param name="subscribe_stereo" type="bool" value="true"/>
+    <param name="subscribe_depth"  type="bool" value="true"/>
+    <param name="approx_sync"      type="bool" value="true"/>
+    <param name="queue_size" type="int" value="30"/>
 
-     <!-- RTAB-Map's parameters -->
+    <!-- RTAB-Map's parameters -->
      
     <!-- inputs -->
       
-      <remap from="odom"            to="/odom"/>
-      <remap from="left/image_rect"   to="/akrobat_stereo/left/image_rect"/>
-      <remap from="right/image_rect"  to="/akrobat_stereo/right/image_rect"/>
-      <remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
-      <remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/> 
+    <remap from="odom"            to="/odom"/>
+    <remap from="left/image_rect"   to="/akrobat_stereo/left/image_rect"/>
+    <remap from="right/image_rect"  to="/akrobat_stereo/right/image_rect"/>
+    <remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
+    <remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/> 
 
-      <remap from="depth/image"     to="/pico_flexx/image_depth"/>
-      <remap from="rgb/image"	to="/pico_flexx/image_mono8"/>
-      <remap from="rgb/camera_info"	to="/pico_flexx/camera_info"/>
+    <remap from="depth/image"     to="/pico_flexx/image_depth"/>
+    <remap from="rgb/image"	to="/pico_flexx/image_mono8"/>
+    <remap from="rgb/camera_info"	to="/pico_flexx/camera_info"/>
 
-  
+  <!-- Fix odom covariance as in simulation the covariance in /odom topic is high (0.1 for linear and 0.05 for angular) -->
+    <param unless="$(arg rgbd_odometry)" name="odom_frame_id" value="odom"/>
+    <param unless="$(arg rgbd_odometry)" name="odom_tf_linear_variance" value="0.001"/>
+    <param unless="$(arg rgbd_odometry)" name="odom_tf_angular_variance" value="0.001"/>
 
+  <!-- output -->
+  	<remap from="grid_map" to="/map"/>
+
+  <!-- RTAB-Map's parameters: do "rosrun rtabmap rtabmap (double-dash)params" to see the list of available parameters. -->
+	  <param name="RGBD/ProximityBySpace"        type="string" value="true"/>   <!-- Local loop closure detection (using estimated position) with locations in WM -->
+	  <param name="RGBD/OptimizeFromGraphEnd"    type="string" value="false"/>  <!-- Set to false to generate map correction between /map and /odom -->
+	  <param name="Kp/MaxDepth"                  type="string" value="4.0"/>
+	  <param name="Reg/Strategy"                 type="string" value="0"/>      <!-- Loop closure transformation: 0=Visual, 1=ICP, 2=Visual+ICP -->
+	  <param name="Icp/CorrespondenceRatio"      type="string" value="0.3"/>
+	  <param name="Vis/MinInliers"               type="string" value="15"/>      <!-- 3D visual words minimum inliers to accept loop closure -->
+	  <param name="Vis/InlierDistance"           type="string" value="0.1"/>    <!-- 3D visual words correspondence distance -->
+	  <param name="RGBD/AngularUpdate"           type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
+	  <param name="RGBD/LinearUpdate"            type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
+	  <param name="RGBD/ProximityPathMaxNeighbors" type="string" value="0"/> 
+	  <param name="Rtabmap/TimeThr"              type="string" value="0"/>
+	  <param name="Mem/RehearsalSimilarity"      type="string" value="0.30"/>
+	  <param name="Reg/Force3DoF"                type="string" value="true"/>
+	  <param name="GridGlobal/MinSize"           type="string" value="20"/>
 
 
   </node>
