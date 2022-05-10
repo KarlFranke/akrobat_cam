@@ -63,8 +63,8 @@
 
     <remap from="left/image_rect"       to="/akrobat_stereo/left/image_rect"/>
     <remap from="right/image_rect"      to="/akrobat_stereo/right/image_rect"/>
-    <remap from="left/camera_info"      to="/akrobat_stereo/left/camera_info"/>
-    <remap from="right/camera_info"     to="/akrobat_stereo/right/camera_info"/>
+    <remap from="left/camera_info"      to="/akrobat_stereopi/left/camera_info"/>
+    <remap from="right/camera_info"     to="/akrobat_stereopi/right/camera_info"/>
 
 
     <remap from="depth/image"     to="/pico_flexx/image_depth"/>
