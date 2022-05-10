@@ -17,9 +17,6 @@
 <node pkg="tf" type="static_transform_publisher" name="odom_base_link"
      args="0 0 0 0 0 0  odom base_link 100" />  
 
-<node pkg="tf" type="static_transform_publisher" name="map_odom_link"
-     args="0 0 0 0 0 0  map odom 100" />  
-
 <!-- Run the ROS package stereo_image_proc -->
 <group ns="/akrobat_stereo" >
     <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
