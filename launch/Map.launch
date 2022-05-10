@@ -5,6 +5,7 @@
 <arg name="rgbd_odometry"     default="false"/>
 
 
+
 <arg name="pi/2" value="1.5707963267948966" />
 <arg name="optical_rotate" value="0 0 0 -$(arg pi/2) 0 -$(arg pi/2)" />
 <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
@@ -49,10 +50,10 @@
 
     <!-- RTAB-Map's parameters -->
     
-
+    <param name="wait_for_transform_duration"  type="double"   value="0.3"/>
     <!-- When sending goals on /rtabmap/goal topic, use actionlib to communicate with move_base --> 
 	  <param name="use_action_for_goal" type="bool" value="true"/>
-          <remap from="move_base"            to="/move_base"/>
+    <remap from="move_base"            to="/move_base"/>
     <!-- inputs -->
       
     <remap from="odom"            to="/odom"/>
