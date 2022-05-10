@@ -15,10 +15,10 @@
      args="$(arg optical_rotate) base_link pico_flexx_optical_frame 100" /> 
 
 <node pkg="tf" type="static_transform_publisher" name="map_odometry_link"
-     args="0 0 0 0 0 0 0 map odometry 100" /> 
+     args="0 0 0 0 0 0 0 map odom 100" /> 
 
 <node pkg="tf" type="static_transform_publisher" name="odometry_base_link"
-     args="0 0 0 0 0 0 0 odometry base_link 100" /> 
+     args="0 0 0 0 0 0 0 odom base_link 100" /> 
 
 <!-- Run the ROS package stereo_image_proc -->
 <group ns="/akrobat_stereo" >
