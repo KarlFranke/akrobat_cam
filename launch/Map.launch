@@ -65,6 +65,11 @@
     <remap from="rgb/image"	to="/pico_flexx/image_mono8"/>
     <remap from="rgb/camera_info"	to="/pico_flexx/camera_info"/>
 
+  <!-- Fix odom covariance as in simulation the covariance in /odom topic is high (0.1 for linear and 0.05 for angular) -->
+    <param unless="$(arg rgbd_odometry)" name="odom_frame_id" value="odom"/>
+    <param unless="$(arg rgbd_odometry)" name="odom_tf_linear_variance" value="0.001"/>
+    <param unless="$(arg rgbd_odometry)" name="odom_tf_angular_variance" value="0.001"/>
+
   <!-- output -->
   	<remap from="grid_map" to="/map"/>
 
