@@ -13,6 +13,9 @@
 
 <node pkg="tf" type="static_transform_publisher" name="pico_base_link"
      args="$(arg optical_rotate) base_link pico_flexx_link 100" /> 
+     
+     <node pkg="tf" type="static_transform_publisher" name="pico_base_optical_link"
+     args="$(arg optical_rotate) base_link pico_flexx_optical_frame 100" /> 
 
 <node pkg="tf" type="static_transform_publisher" name="odom_base_link"
      args="0 0 0 0 0 0  odom base_link 100" />   
