@@ -72,10 +72,7 @@
     <remap from="rgb/image"	to="/pico_flexx/image_mono8"/>
     <remap from="rgb/camera_info"	to="/pico_flexx/camera_info"/>
 
-  <!-- Fix odom covariance as in simulation the covariance in /odom topic is high (0.1 for linear and 0.05 for angular) -->
-    <param unless="$(arg rgbd_odometry)" name="odom_frame_id" value="odom"/>
-    <param unless="$(arg rgbd_odometry)" name="odom_tf_linear_variance" value="0.001"/>
-    <param unless="$(arg rgbd_odometry)" name="odom_tf_angular_variance" value="0.001"/>
+  
 
   <!-- output -->
   	<remap from="grid_map" to="/map"/>
@@ -88,8 +85,6 @@
 	  <param name="Icp/CorrespondenceRatio"      type="string" value="0.3"/>
 	  <param name="Vis/MinInliers"               type="string" value="15"/>      <!-- 3D visual words minimum inliers to accept loop closure -->
 	  <param name="Vis/InlierDistance"           type="string" value="0.1"/>    <!-- 3D visual words correspondence distance -->
-	  <param name="RGBD/AngularUpdate"           type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
-	  <param name="RGBD/LinearUpdate"            type="string" value="0.1"/>    <!-- Update map only if the robot is moving -->
 	  <param name="RGBD/ProximityPathMaxNeighbors" type="string" value="0"/> 
 	  <param name="Rtabmap/TimeThr"              type="string" value="0"/>
 	  <param name="Mem/RehearsalSimilarity"      type="string" value="0.30"/>
