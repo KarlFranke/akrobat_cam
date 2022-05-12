@@ -62,7 +62,7 @@
     <remap from="move_base"            to="/move_base"/>
     <!-- inputs -->
       
-    <remap from="odom"            to="/localizations_odometry"/>
+    <remap from="odom"            to="/odom"/>
 
     <!-- <remap from="left/image_rect"       to="/akrobat_stereo/left/image_rect"/>
     <remap from="right/image_rect"      to="/akrobat_stereo/right/image_rect"/>
