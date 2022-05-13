@@ -5,7 +5,10 @@
   <arg name="left_camera_name" default="left"/>
   <arg name="right_camera_name" default="right"/>
 
-  <node type="stereo_node" pkg="raspicam_node" name="akrobat_stereopi" output="screen" launch-prefix="">
+  
+
+<group ns="/akrobat_stereo" >
+    <node type="stereo_node" pkg="raspicam_node" name="akrobat_stereopi" output="screen" launch-prefix="">
     <param name="private_topics" value="true"/>
     <param name="imagefx_mode" value="none"/>
     <param name="encoding" value="bgr8"/>
@@ -26,5 +29,28 @@
     <param name="framerate" value="8"/>
   </node>
 
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+	<remap from="left/image_raw"   to="/akrobat_stereopi/left/image_raw"/>
+	<remap from="right/image_raw"  to="/akrobat_stereopi/right/image_raw"/>
+	<remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
+	<remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/>	
+	</node>
+    <!-- Odometry -->
+    <node pkg="rtabmap_ros" type="stereo_odometry" name="stereo_odometry" output="screen">
+
+        <remap from="left/image_rect"       to="left/image_rect"/>
+      	<remap from="right/image_rect"      to="right/image_rect"/>
+      	<remap from="left/camera_info"      to="/akrobat_stereopi/left/camera_info"/>
+      	<remap from="right/camera_info"     to="/akrobat_stereopi/right/camera_info"/>
+      	<remap from="odom"                  to="/stereo_odometry"/>
+
+        <param name="frame_id" type="string" value="base_link"/>
+        <param name="odom_frame_id" type="string" value="odom"/>
+        <param name="approx_sync"   type="bool" value="false"/>
+        <param name="queue_size"    type="int" value="5"/>
+
+        
+    </node>     
+</group>
 
 </launch>
