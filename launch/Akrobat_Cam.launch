@@ -5,10 +5,13 @@
   <arg name="left_camera_name" default="left"/>
   <arg name="right_camera_name" default="right"/>
 
-  
+  <arg name="pi/2" value="1.5707963267948966" />
+
+  <node pkg="tf" type="static_transform_publisher" name="camera_base_link"
+     args="0.315 0 0 -$(arg pi/2) 0 -$(arg pi/2) base_link left 100" /> 
 
 <group ns="/akrobat_stereo" >
-    <node type="stereo_node" pkg="raspicam_node" name="akrobat_stereopi" output="screen" launch-prefix="">
+    <node type="stereo_node" pkg="raspicam_node" name="camera" output="screen" launch-prefix="">
     <param name="private_topics" value="true"/>
     <param name="imagefx_mode" value="none"/>
     <param name="encoding" value="bgr8"/>
@@ -30,10 +33,10 @@
   </node>
 
     <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
-	<remap from="left/image_raw"   to="/akrobat_stereopi/left/image_raw"/>
-	<remap from="right/image_raw"  to="/akrobat_stereopi/right/image_raw"/>
-	<remap from="left/camera_info"  to="/akrobat_stereopi/left/camera_info"/>
-	<remap from="right/camera_info" to="/akrobat_stereopi/right/camera_info"/>	
+	<remap from="left/image_raw"   to="camera/left/image_raw"/>
+	<remap from="right/image_raw"  to="camera/right/image_raw"/>
+	<remap from="left/camera_info"  to="camera/left/camera_info"/>
+	<remap from="right/camera_info" to="camera/right/camera_info"/>	
 	</node>
     <!-- Odometry -->
     <node pkg="rtabmap_ros" type="stereo_odometry" name="stereo_odometry" output="screen">
