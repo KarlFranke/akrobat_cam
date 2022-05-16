@@ -42,6 +42,8 @@
   <machine name="localhost" address="localhost" if="$(arg define_machine)"/>
 
   <!-- Static TF publisher. -->
+  <arg name="pi/2" value="1.5707963267948966" />
+
   <node pkg="tf" type="static_transform_publisher" name="pico_base_link" if="$(arg publish_tf)"
      args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_link 100" /> 
 

@@ -4,7 +4,7 @@
 
 <arg name="rgbd_odometry"     default="false"/>
 
-<arg name="pi/2" value="1.5707963267948966" />
+
 
 
 
