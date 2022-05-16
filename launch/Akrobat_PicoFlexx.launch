@@ -24,7 +24,7 @@
   <!-- Queue size for publisher. -->
   <arg name="queue_size"         default="5"/>
   <!-- Publish a static TF transform for the optical frame of the camera. -->
-  <arg name="publish_tf"         default="false" />
+  <arg name="publish_tf"         default="true" />
   <!-- Base name of the tf frames. -->
   <arg name="base_name_tf"       default="$(arg base_name)"/>
   <!-- Machine on with the nodes should run. -->
@@ -42,8 +42,12 @@
   <machine name="localhost" address="localhost" if="$(arg define_machine)"/>
 
   <!-- Static TF publisher. -->
-  <node pkg="tf" type="static_transform_publisher" name="$(arg base_name)_static_tf" machine="$(arg machine)" if="$(arg publish_tf)"
-        args="0 0 0 0 0 -1.57079632679489661923 $(arg base_name_tf)_link $(arg base_name_tf)_optical_frame 100" />
+  <node pkg="tf" type="static_transform_publisher" name="pico_base_link" if="$(arg publish_tf)"
+     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_link 100" /> 
+
+  <node pkg="tf" type="static_transform_publisher" name="pico_base_optical_link" if="$(arg publish_tf)"
+     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_optical_frame 100" /> 
+
 
   <!-- Nodelet manager. -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager"

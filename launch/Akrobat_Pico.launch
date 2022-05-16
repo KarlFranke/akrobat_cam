@@ -3,11 +3,7 @@
 
 <include file="$(find pico_flexx_driver)/launch/pico_flexx_driver.launch" />
 
-<node pkg="tf" type="static_transform_publisher" name="pico_base_link"
-     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_link 100" /> 
 
-<node pkg="tf" type="static_transform_publisher" name="pico_base_optical_link"
-     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_optical_frame 100" /> 
 
 
 <node pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry" output="screen">
