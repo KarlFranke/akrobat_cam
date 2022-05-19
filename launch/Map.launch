@@ -43,7 +43,7 @@
   
 
   <!-- output -->
-  	<remap from="grid_map" to="/map"/>
+  	<!-- <remap from="grid_map" to="/map"/> -->
 <!-- Paramter von https://www.zhb.uni-luebeck.de/epubs/ediss1918.pdf Seite 151 -->
 <param name="RGBD/LocalImmunizationRatio" type="string" value="0.5"/>
 <param name="RGBD/LocalLoopDetectionSpace" type="string" value="true"/>
