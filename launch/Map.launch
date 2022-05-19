@@ -44,27 +44,7 @@
 
   <!-- output -->
   	<!-- <remap from="grid_map" to="/map"/> -->
-<!-- Paramter von https://www.zhb.uni-luebeck.de/epubs/ediss1918.pdf Seite 151 -->
-<param name="RGBD/LocalImmunizationRatio" type="string" value="0.5"/>
-<param name="RGBD/LocalLoopDetectionSpace" type="string" value="true"/>
-<param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
-<param name="RGBD/OptimizeSlam2D" type="string" value="true"/>
-<param name="RGBD/OptimizeStrategy" type="string" value="1"/>
-<param name="RGBD/OptimizeIterations" type="string" value="20"/>
-<param name="Kp/DetectorStrategy" type="string" value="2"/>
-<param name="Kp/NNStrategy" type="string" value="3"/>
-<param name="Kp/MaxDepth" type="string" value="4.0"/>
-<param name="LccIcp/Type" type="string" value="0"/>
-<param name="LccIcp2/CorrespondenceRatio" type="string" value="0.08"/>
-<param name="LccBow/MaxDepth" type="string" value="0.0"/>
-<param name="LccBow/MinInliers" type="string" value="10"/>
-<param name="LccBow/InlierDistance" type="string" value="0.1"/>
-<param name="RGBD/AngularUpdate" type="string" value="0.01"/>
-<param name="RGBD/LinearUpdate" type="string" value="0.01"/>
-<param name="Rtabmap/LoopThr" type="string" value="0.0"/>
-<param name="Rtabmap/TimeThr" type="string" value="700"/>
-<param name="Rtabmap/DetectionRate" type="string" value="1"/>
-<param name="Mem/RehearsalSimilarity" type="string" value="0.45"/>
+
 
   </node>
  </group>
