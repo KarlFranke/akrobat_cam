@@ -24,7 +24,7 @@
   <!-- Queue size for publisher. -->
   <arg name="queue_size"         default="5"/>
   <!-- Publish a static TF transform for the optical frame of the camera. -->
-  <arg name="publish_tf"         default="false" />
+  <arg name="publish_tf"         default="true" />
   <!-- Base name of the tf frames. -->
   <arg name="base_name_tf"       default="$(arg base_name)"/>
   <!-- Machine on with the nodes should run. -->
