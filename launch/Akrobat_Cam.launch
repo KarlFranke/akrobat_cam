@@ -45,7 +45,7 @@
       	<remap from="right/image_rect"      to="right/image_rect"/>
       	<remap from="left/camera_info"      to="camera/left/camera_info"/>
       	<remap from="right/camera_info"     to="camera/right/camera_info"/>
-      	<!-- <remap from="odom"                  to="/odom"/> -->
+      	<remap from="odom"                  to="/odom"/>
 
         <param name="Odom/Strategy"      type="string" value="0"/> <!-- 0=Frame-to-Map, 1=Frame=to=Frame -->
         <param name="frame_id" type="string" value="base_link"/>
