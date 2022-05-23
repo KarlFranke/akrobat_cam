@@ -4,7 +4,7 @@
   <!-- ID of the sensor that should be used. IDs of all connected devices are listed on startup. -->
   <arg name="sensor"             default=""/>
   <!-- ID of the use case. A list of supported use cases is listed on startup. -->
-  <arg name="use_case"           default="0"/>
+  <arg name="use_case"           default="1"/>
   <!-- Enable or disable automatic expusure. -->
   <arg name="automatic_exposure" default="true"/>
   <!-- Exposure time. Only for manual exposure. -->
@@ -24,7 +24,7 @@
   <!-- Queue size for publisher. -->
   <arg name="queue_size"         default="5"/>
   <!-- Publish a static TF transform for the optical frame of the camera. -->
-  <arg name="publish_tf"         default="true" />
+  <arg name="publish_tf"         default="false" />
   <!-- Base name of the tf frames. -->
   <arg name="base_name_tf"       default="$(arg base_name)"/>
   <!-- Machine on with the nodes should run. -->
@@ -42,14 +42,7 @@
   <machine name="localhost" address="localhost" if="$(arg define_machine)"/>
 
   <!-- Static TF publisher. -->
-  <arg name="pi/2" value="1.5707963267948966" />
-
-  <node pkg="tf" type="static_transform_publisher" name="pico_base_link" if="$(arg publish_tf)"
-     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_link 100" /> 
-
-  <node pkg="tf" type="static_transform_publisher" name="pico_base_optical_link" if="$(arg publish_tf)"
-     args="0.315 0 0.19 -$(arg pi/2) 0 -$(arg pi/2) base_link pico_flexx_optical_frame 100" /> 
-
+  <arg name="pi/2" value="1.5707963267948966" />true
 
   <!-- Nodelet manager. -->
   <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager"
