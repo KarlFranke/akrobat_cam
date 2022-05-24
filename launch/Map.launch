@@ -2,7 +2,7 @@
 
 <launch>
 
-<arg name="database_path"     default="rtabmap.db"/>
+<arg name="database_path"     default=""/>
 <arg name="rgbd_odometry"     default="false"/>
 <arg name="rtabmapviz"        default="false"/>
 <arg name="localization"      default="false"/>
@@ -26,7 +26,7 @@
 
 
 <group ns="rtabmap">   
-  <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen">
+  <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="">
     <param name="database_path"       type="string" value="$(arg database_path)"/>
     <param name="frame_id" type="string" value="base_link"/>
     <param name="wait_for_transform_duration"  type="double"   value="$(arg wait_for_transform)"/>
