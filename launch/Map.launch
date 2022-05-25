@@ -8,8 +8,8 @@
 <arg name="localization"      default="false"/>
 <arg name="simulation"        default="false"/>
 <arg name="sw_registered"     default="false"/>
-<arg     if="$(arg localization)" name="args"  default=""/>
-<arg unless="$(arg localization)" name="args"  default="--delete_db_on_start"/>
+<arg     if="$(arg localization)" name="localiz"  default=""/>
+<arg unless="$(arg localization)" name="localiz"  default="--delete_db_on_start"/>
 
 <arg     if="$(arg simulation)" name="rgb_topic"   default="/pico_flexx/image_mono8"/>
 <arg unless="$(arg simulation)" name="rgb_topic"   default="/pico_flexx/image_mono8"/>
@@ -26,7 +26,7 @@
 
 
 <group ns="rtabmap">   
-  <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="$(arg args)">
+  <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" output="screen" args="$(arg localiz)">
     <param name="database_path"       type="string" value="$(arg database_path)"/>
     <param name="frame_id" type="string" value="base_link"/>
     <param name="wait_for_transform_duration"  type="double"   value="$(arg wait_for_transform)"/>
