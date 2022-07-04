@@ -4,7 +4,7 @@
   <!-- ID of the sensor that should be used. IDs of all connected devices are listed on startup. -->
   <arg name="sensor"             default=""/>
   <!-- ID of the use case. A list of supported use cases is listed on startup. -->
-  <arg name="use_case"           default="1"/>
+  <arg name="use_case"           default="0"/>
   <!-- Enable or disable automatic expusure. -->
   <arg name="automatic_exposure" default="true"/>
   <!-- Exposure time. Only for manual exposure. -->
@@ -24,7 +24,7 @@
   <!-- Queue size for publisher. -->
   <arg name="queue_size"         default="5"/>
   <!-- Publish a static TF transform for the optical frame of the camera. -->
-  <arg name="publish_tf"         default="true" />
+  <arg name="publish_tf"         default="false" />
   <!-- Base name of the tf frames. -->
   <arg name="base_name_tf"       default="$(arg base_name)"/>
   <!-- Machine on with the nodes should run. -->
