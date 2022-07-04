@@ -51,12 +51,12 @@
         <param name="odom_frame_id" type="string" value="odom"/>
 
       <param name="Odom/Strategy" type="string" value="0"/> <!-- 0=BOW, 1=OpticalFlow -->
-      <param name="Odom/EstimationType" type="string" value="1"/> <!-- 3D->2D (PnP) -->
-      <param name="Odom/MinInliers" type="string" value="10"/>
-      <param name="Odom/RoiRatios" type="string" value="0.03 0.03 0.04 0.04"/>
-      <param name="Odom/MaxDepth" type="string" value="10"/>
-      <param name="OdomBow/NNDR" type="string" value="0.8"/>
-      <param name="Odom/MaxFeatures" type="string" value="1000"/>
+      <param name="Vis/EstimationType" type="string" value="1"/> <!-- 3D->2D (PnP) -->
+      <param name="Vis/MinInliers" type="string" value="10"/>
+      <param name="Vis/RoiRatios" type="string" value="0.03 0.03 0.04 0.04"/>
+      <param name="Vis/MaxDepth" type="string" value="10"/>
+      <param name="Vis/CorNNDR" type="string" value="0.8"/>
+      <param name="Vis/MaxFeatures" type="string" value="1000"/>
       <param name="Odom/FillInfoData" type="string" value="false"/>
       <param name="GFTT/MinDistance" type="string" value="10"/>
       <param name="GFTT/QualityLevel" type="string" value="0.00001"/> 
