@@ -27,7 +27,7 @@
     <param name="right_camera_name" value="$(arg right_camera_name)"/>
     <param name="width" value="640"/>
     <param name="height" value="480"/>
-    <param name="framerate" value="10"/>
+    <param name="framerate" value="2"/>
   </node>
 
 <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
