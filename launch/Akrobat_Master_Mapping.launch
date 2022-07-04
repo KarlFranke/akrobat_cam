@@ -3,6 +3,6 @@
 <include file="$(find akrobat_cam)/launch/Akrobat_Cam.launch" />
 <include file="$(find akrobat_cam)/launch/Akrobat_PicoFlexx.launch" />
 <!-- <include file="$(find akrobat_cam)/launch/Map.launch" /> -->
-<include file="$(find akrobat_imu)/launch/bricks_v2.launch" />
+<!-- <include file="$(find akrobat_imu)/launch/bricks_v2.launch" /> -->
 
 </launch>
