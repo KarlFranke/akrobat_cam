@@ -28,7 +28,7 @@
   <!-- Base name of the tf frames. -->
   <arg name="base_name_tf"       default="$(arg base_name)"/>
   <!-- Machine on with the nodes should run. -->
-  <arg name="machine"            default="Akrobat_Vorne"/>
+  <arg name="machine"            default="localhost"/>
   <!-- Whether the machine for localhost should be defined our not. Disable this if the launch file is included somewhere where machines are already defined. -->
   <arg name="define_machine"     default="true"/>
   <!-- Name of the nodelet manager. -->
