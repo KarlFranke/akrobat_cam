@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Launch the robot
-#source /opt/ros/noetic/setup.bash 
-#source /home/user/catkin_ws/devel/setup.bash 
+source /opt/ros/noetic/setup.bash 
+source ~/catkin_ws/devel/setup.bash 
 
 echo "Launching Cam, please wait!"
 
