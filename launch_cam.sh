@@ -3,7 +3,7 @@
 #https://risc.readthedocs.io/2-auto-service-start-afer-boot.html
 #https://askubuntu.com/questions/929659/bash-wait-for-a-ping-success
 
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/noetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 
 printf "%s" "waiting for ServerXY ..."
