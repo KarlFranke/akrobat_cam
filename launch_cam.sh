@@ -16,5 +16,6 @@ do
     printf "%s" "Missing ROS_Master"
 done
 printf "\n%s\n"  "Server is back online"
-roslaunch akrobat_cam Akrobat_Master_Mapping.launch
+gnome-terminal -e 'sh -c "roslaunch akrobat_cam Akrobat_Master_Mapping.launch; exec bash"'
+
  
