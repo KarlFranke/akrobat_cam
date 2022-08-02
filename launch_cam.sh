@@ -13,7 +13,7 @@ do
 done
 while ! rostopic list
 do
-    printf "%s" "Missing ROS_Master""
+    printf "%s" "Missing ROS_Master"
 done
 printf "\n%s\n"  "Server is back online"
 roslaunch akrobat_cam Akrobat_Master_Mapping.launch
