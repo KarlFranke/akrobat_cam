@@ -16,6 +16,6 @@ do
     printf "%s" "Missing ROS_Master"
 done
 printf "\n%s\n"  "Server is back online"
-lxterminal -e 'sh -c "roslaunch akrobat_cam Akrobat_Master_Mapping.launch; exec bash"'
+roslaunch akrobat_cam Akrobat_Master_Mapping.launch
 
  
